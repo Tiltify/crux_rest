@@ -235,11 +235,4 @@ defmodule Crux.Rest.Endpoints.Generator do
     |> String.to_atom()
     |> Macro.var(Elixir)
   end
-
-  # Returns AST to `to_string/1` the given name as a variable in the current context.
-  defp to_string_variable(name) do
-    quote do
-      to_string(unquote(to_variable(name)))
-    end
-  end
 end

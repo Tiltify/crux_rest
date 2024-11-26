@@ -333,6 +333,6 @@ defmodule Crux.Rest.RateLimiter.Default.Handler do
 
   defp warn(str, %{type: type, identifier: identifier}) do
     require Logger
-    Logger.warn("[#{type}-handler][#{identifier}]: #{str}")
+    Logger.warning("[#{type}-handler][#{identifier}]: #{str}")
   end
 end

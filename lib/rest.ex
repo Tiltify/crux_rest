@@ -22,7 +22,7 @@ defmodule Crux.Rest do
 
     def get_user(user) do
       with {:error, error} <- super(user) do
-        Logger.warn("Failed to fetch #{inspect(user)}: #{inspect(error)}")
+        Logger.warning("Failed to fetch #{inspect(user)}: #{inspect(error)}")
 
         {:error, error}
       end
