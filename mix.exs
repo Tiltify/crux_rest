@@ -51,9 +51,7 @@ defmodule Crux.Rest.MixProject do
   end
 
   defp aliases() do
-    [
-      docs: ["docs", &generate_config/1]
-    ]
+    []
   end
 
   defp docs() do
@@ -94,26 +92,5 @@ defmodule Crux.Rest.MixProject do
         """
       end
     ]
-  end
-
-  def generate_config(_) do
-    config =
-      System.cmd("git", ["tag"])
-      |> elem(0)
-      |> String.split("\n")
-      |> Enum.slice(0..-2)
-      |> Enum.map(&%{"url" => "https://hexdocs.pm/#{@name}/" <> &1, "version" => &1})
-      |> Enum.reverse()
-      |> Jason.encode!()
-
-    config = "var versionNodes = " <> config
-
-    __DIR__
-    |> Path.split()
-    |> Kernel.++(["doc", "docs_config.js"])
-    |> Enum.join("/")
-    |> File.write!(config)
-
-    Mix.Shell.IO.info(~S{Generated "doc/docs_config.js".})
   end
 end
