@@ -41,12 +41,14 @@ defmodule Crux.Rest.MixProject do
   defp deps do
     [
       # {:crux_structs, "~> 0.3"},
-      {:crux_structs, github: "spaceeec/crux_structs"},
+      {:crux_structs,
+       git: "https://github.com/Tiltify/crux_structs",
+       ref: "1c994b4eb0bd01adb048d907a2b22f4eab341265"},
       {:httpoison, "~> 2.2"},
-      {:jason, "~> 1.2"},
-      {:ex_doc, "~> 0.25", only: :dev, runtime: false},
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
-      {:mox, "~> 1.0", only: :test}
+      {:jason, "~> 1.4.5"},
+      {:ex_doc, "~> 0.40.2", only: :dev, runtime: false},
+      {:credo, "~> 1.7.18", only: [:dev, :test], runtime: false},
+      {:mox, "~> 1.2", only: :test}
     ]
   end
 
