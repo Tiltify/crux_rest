@@ -42,9 +42,9 @@ defmodule Crux.Rest.MixProject do
     [
       # {:crux_structs, "~> 0.3"},
       {:crux_structs, github: "spaceeec/crux_structs"},
-      {:httpoison, "~> 2.2"},
+      {:httpoison, "~> 3.0"},
       {:jason, "~> 1.2"},
-      {:ex_doc, "~> 0.25", only: :dev, runtime: false},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:mox, "~> 1.0", only: :test}
     ]
